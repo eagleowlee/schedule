@@ -12,6 +12,7 @@ public class Schedule extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String username;
 
     private String password;
@@ -19,7 +20,7 @@ public class Schedule extends BaseEntity {
     @Column(nullable = false)
     private String title;
 
-    @Column(columnDefinition = "longtext")
+    @Column(columnDefinition = "longtext", nullable = false)
     private String contents;
 
     public Schedule() {
